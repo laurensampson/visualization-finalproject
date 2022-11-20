@@ -6,6 +6,26 @@ h1 {
 h2, h3 {
     text-align: center;
 }
+.type {
+    margin-left: 200px;
+    font-weight: bold;
+}
+.select-factor {
+    font-weight: bold;
+    font-size: 2.2rem;
+    letter-spacing: -.08rem;
+    line-height: 1.35;
+    margin-bottom: 2rem;
+    margin-top: 0;
+    display: block;
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
 .bubble {
     text-align: center;
+}
+.names {
+    pointer-events: none;
 }
