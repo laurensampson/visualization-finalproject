@@ -14,8 +14,10 @@ Promise.all([ // load multiple files
                                                                                                                   document.querySelector("[class$=ss-main]").style.display = "block";
                                                                                                                   document.querySelector("[class$=ss-main]").style.width = "400px";
                                                                                                                   document.querySelector("[class$=ss-main]").style.margin = "auto";
-                                                                                                                  selectedCountry = document.querySelector('.placeholder').innerHTML;
-                                                                                                                  console.log("selectedCountry", selectedCountry);
+                                                                                                                  d3.selectAll("#selectCountry").on("change", function (event) {
+                                                                                                                    selectedCountry = d3.select('#selectCountry').node().value; //currently saving 2-lettercountry code, can be change to 3-letter ones
+                                                                                                                    console.log("selectedCountry", selectedCountry);
+                                                                                                                  });
                                                                                                                 })
                                                                                                                 });
 });
