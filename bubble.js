@@ -1,12 +1,11 @@
 export default bubble;
 
-var returnFactor;
 function bubble(data, container){
     var selectedType;
     // initialization
-    const margin = ({top: 30, right: 50, bottom: 75, left: 50});
+    const margin = ({top: 30, right: 50, bottom: 0, left: 50});
     const width = 1400 - margin.left - margin.right,
-          height = 650 - margin.top - margin.bottom;
+          height = 475 - margin.top - margin.bottom;
     const svg = d3.select(container)
                   .append("svg")
                   .attr("width", width + margin.left + margin.right)
@@ -31,17 +30,6 @@ function bubble(data, container){
                                         .attr("opacity", 0.75)})
          .on("mouseout", function() {d3.select(this)
                                        .attr("opacity", 1)})
-         .on("click", function (e, d) {svg.selectAll(".select-factor")
-                                         .data(d)
-                                         .enter()
-                                         .append("text")
-                                         .attr("class", "select-factor")
-                                         .attr("dx", 10)
-                                         .attr("dy", 225)
-                                         .attr("fill", "#606c76")
-                                         .text("Select a specific death factor to explore:");
-                                         selectedType = showFactor(d)
-                                        console.log("showFactor result saved", selectedType)})
          .merge(types)
          .transition()
          .delay(1000)
@@ -79,20 +67,19 @@ function bubble(data, container){
                .append("circle")
                .attr("class", "factors")
                .attr("cx", width / 2)
-               .attr("cy", 350)
+               .attr("cy", 325)
                .attr("r", 90)
                .attr("fill", d => colors(d.factorType))
                .on("mouseover", function() {d3.select(this)
                                               .attr("opacity", 0.75)})
                .on("mouseout", function() {d3.select(this)
                                              .attr("opacity", 1)})
-               .on("click", function (e, d) {console.log("clicked on", d.factorName)
-                returnFactor = d.factorName})
+               //.on("click", function (e, d) {returnFactor = d.factorName})
                .merge(factors)
                .transition()
                .delay(100)
                .attr("cx", d => xScale(d.factorName))
-               .attr("cy", 350)
+               .attr("cy", 325)
                .attr("r", 90)
                .attr("fill", d => colors(d.factorType));
         factors.exit()
@@ -104,7 +91,7 @@ function bubble(data, container){
              .attr("class", "names")
              .attr("text-anchor", "center")
              .attr("x", d => xScale(d.factorName) - 80)
-             .attr("y", d => 335 - d.factorName.length * 0.25)
+             .attr("y", d => 315 - d.factorName.length * 0.25)
              .attr("width", 160)
              .attr("height", 160)
              .append("xhtml:div")
@@ -116,7 +103,7 @@ function bubble(data, container){
              .delay(100)
              .attr("fill-opacity", 1)
              .attr("x", d => xScale(d.factorName) - 80)
-             .attr("y", d => 335 - d.factorName.length * 0.25)
+             .attr("y", d => 315 - d.factorName.length * 0.25)
              .attr("width", 160)
              .attr("height", 160)
              .attr("stroke", "black")
@@ -126,8 +113,8 @@ function bubble(data, container){
              .style("color", "black")
         names.exit()
              .remove();
-        //console.log("returnFactor", returnFactor)
-        return returnFactor;
     }
-    return selectedType;
+    return {
+        showFactor
+    }
 }
