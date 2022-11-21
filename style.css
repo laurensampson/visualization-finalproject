@@ -16,3 +16,6 @@ h2, h3 {
 .names {
     pointer-events: none;
 }
+#line {
+    margin-left: 200px;
+}

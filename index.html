@@ -10,6 +10,9 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/slim-select/1.27.1/slimselect.min.js"></script>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/slim-select/1.27.1/slimselect.min.css" rel="stylesheet"></link>
         <script defer src="https://d3js.org/d3.v6.min.js" charset="utf-8"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega@5.22.1"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.2.0"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.21.0"></script>
         <script defer src="main.js" defer type="module"></script>
         <link rel="stylesheet" href="style.css"/>
     </head>
@@ -21,7 +24,7 @@
         <div class="bubble"></div>
         <h4 id="selected"></h4>
         <select id="selectCountry">
-            <option>Select a Country to See Details</option>
+            <option value="World">World</option>
             <option value="Afghanistan">Afghanistan</option>
             <option value="Albania">Albania</option>
             <option value="Algeria">Algeria</option>
@@ -66,7 +69,7 @@
             <option value="Congo">Congo</option>
             <option value="Cook Islands">Cook Islands</option>
             <option value="Costa Rica">Costa Rica</option>
-            <option value="Cota D'Ivoire">Cote d'Ivoire</option>
+            <option value="Cote d'Ivoire">Cote d'Ivoire</option>
             <option value="Croatia">Croatia</option>
             <option value="Cuba">Cuba</option>
             <option value="Cyprus">Cyprus</option>
@@ -235,5 +238,6 @@
             })
             document.querySelector("[class$=ss-main]").style.display = "none";
         </script>
+        <div id="line"/>
     </body>
 </html>
