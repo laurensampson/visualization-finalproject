@@ -19,21 +19,13 @@ Promise.all([ // load multiple files
                                                                         document.querySelector("[class$=ss-main]").style.width = "400px";
                                                                         document.querySelector("[class$=ss-main]").style.margin = "auto";
                                                                         selectedCountry = d3.select('#selectCountry').node().value;
-                                                                        //vegaEmbed('#line', line(selectedFactor)).then(res => res.view.insert('myData', mainData.filter(d => d.Entity == selectedCountry))
-                                                                                                                                       //.run());
-                                                                       
                                                                         vegaEmbed("#line", line(selectedFactor, selectedCountry));
                                                                         console.log("parameters", selectedFactor, selectedCountry)
                                                                         d3.selectAll("#selectCountry")
-                                                                
                                                                           .on("change", function (event) {selectedCountry = d3.select('#selectCountry').node().value;
                                                                                                           console.log("selectedCountry", selectedCountry);
                                                                                                           console.log("filtered data", mainData.filter(d => d.Entity == selectedCountry))
-                                                                                                         // vegaEmbed('#line', line(selectedFactor)).then(res => res.view.insert('myData', mainData.filter(d => d.Entity == selectedCountry))
-                                                                                                                                    // .run()
-                                                                                                          //);
-                                                                                                          vegaEmbed("#line", line(selectedFactor, selectedCountry));
-                                                                      });
+                                                                                                          vegaEmbed("#line", line(selectedFactor, selectedCountry));});
                                                                     })
                                                                     });
 });

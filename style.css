@@ -17,9 +17,5 @@ h2, h3 {
     pointer-events: none;
 }
 #line {
-    /*text-align: center;*/
-    margin: 200px;
-}
-canvas.marks {
-    width: 600px;
+    margin-left: 200px;
 }

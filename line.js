@@ -5,10 +5,10 @@ function line(factor, country){
                   "data": {"name": "myData", "url": "Number of Deaths by Risk Factors.csv"},
                   "transform": [{"filter": {"field": "Entity", "equal": `${country}`}}],
                   "mark": {"type": "line", "point": true},
-                  "encoding": {"x": {"field": "Year", "type": "quantitative", "scale": {"zero": false}},
-                               "y": {"field": `${factor}`, "type": "quantitative", "scale": {"zero": false}},
+                  "encoding": {"x": {"field": "Year", "type": "temporal", "scale": {"zero": false}},
+                               "y": {"field": `${factor}`, "type": "quantitative", "scale": {"zero": false}, "title": "Death (people)"},
                                "order": {"field": "Year"}},
-                  "width": 500,
-                  "height": 300}
+                  "width": 600,
+                  "height": 400}
     return spec;
 }
