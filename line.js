@@ -1,8 +1,9 @@
 export default line;
 
-function line(factor){
+function line(factor, country){
     const spec = {"$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-                  "data": {"name": "myData"},
+                  "data": {"name": "myData", "url": "Number of Deaths by Risk Factors.csv"},
+                  "transform": [{"filter": {"field": "Entity", "equal": `${country}`}}],
                   "mark": {"type": "line", "point": true},
                   "encoding": {"x": {"field": "Year", "type": "quantitative", "scale": {"zero": false}},
                                "y": {"field": `${factor}`, "type": "quantitative", "scale": {"zero": false}},
