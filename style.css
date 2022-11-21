@@ -16,3 +16,10 @@ h2, h3 {
 .names {
     pointer-events: none;
 }
+#line {
+    /*text-align: center;*/
+    margin: 200px;
+}
+canvas.marks {
+    width: 600px;
+}
