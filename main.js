@@ -1,5 +1,6 @@
 import bubble from "./bubble.js";
-import line from "./line.js"
+import line from "./line.js";
+import bar from "./bar.js";
 
 Promise.all([ // load multiple files
 	d3.csv('factorType.csv', d3.autoType),
@@ -20,12 +21,14 @@ Promise.all([ // load multiple files
                                                                         document.querySelector("[class$=ss-main]").style.margin = "auto";
                                                                         selectedCountry = d3.select('#selectCountry').node().value;
                                                                         vegaEmbed("#line", line(selectedFactor, selectedCountry));
+                                                                        vegaEmbed("#bar", bar(selectedFactor, selectedCountry));
                                                                         console.log("parameters", selectedFactor, selectedCountry)
                                                                         d3.selectAll("#selectCountry")
                                                                           .on("change", function (event) {selectedCountry = d3.select('#selectCountry').node().value;
                                                                                                           console.log("selectedCountry", selectedCountry);
                                                                                                           console.log("filtered data", mainData.filter(d => d.Entity == selectedCountry))
-                                                                                                          vegaEmbed("#line", line(selectedFactor, selectedCountry));});
+                                                                                                          vegaEmbed("#line", line(selectedFactor, selectedCountry));
+                                                                                                          vegaEmbed("#bar", bar(selectedFactor, selectedCountry))});
                                                                     })
                                                                     });
 });
