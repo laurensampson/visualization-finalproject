@@ -3,12 +3,13 @@ h1 {
     text-align: center;
     font-weight: bold;
 }
-h2, h3 {
+h2, h3{
     text-align: center;
 }
 .type {
-    margin-left: 200px;
+    
     font-weight: bold;
+    text-align: center;
 }
 .bubble, #selected {
     text-align: center;
@@ -21,4 +22,15 @@ h2, h3 {
 }
 #bar {
     margin-left: 200px;
+}
+#scatter {
+    margin-left: 200px;
+}
+#selectCompareFactor{
+    display: none;
+    width: 400px;
+    margin: auto;
+}
+#compareFactor{
+    text-align: center;
 }
