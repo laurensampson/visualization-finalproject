@@ -18,16 +18,16 @@ Promise.all([ // load multiple files
                                       .on("click", function (event, d) {selectedFactor = d.factorName;
                                                                         console.log("selectedFactor", selectedFactor)
                                                                         document.getElementById("selected").textContent = "You have selected " + selectedFactor + ". Scroll down to embark the journey";
-                                                                        document.getElementById("compareFactor").textContent = "Select a comparison factor to learn more about the correlation in data.";
+                                                                        document.getElementById("gdp").textContent = "Explore a country's wealth and deaths from this factor. Select any region you want to see.";
                                                                         document.querySelector("[class$=ss-main]").style.display = "block";
                                                                         document.querySelector("[class$=ss-main]").style.width = "400px";
                                                                         document.querySelector("[class$=ss-main]").style.margin = "auto";
-                                                                        document.querySelector("#selectCompareFactor").style.display = "block";
+                                                                        //document.querySelector("#selectCompareFactor").style.display = "block";
                                                                         selectedCountry = d3.select('#selectCountry').node().value;
-                                                                        compareFactor = d3.select('#selectCompareFactor').node().value;
+                                                                        //compareFactor = d3.select('#selectCompareFactor').node().value;
                                                                         vegaEmbed("#line", line(selectedFactor, selectedCountry));
                                                                         vegaEmbed("#bar", bar(selectedFactor, selectedCountry));
-                                                                        vegaEmbed("#scatter", scatter(selectedFactor, compareFactor));
+                                                                        vegaEmbed("#scatter", scatter(selectedFactor));
 
                                                                         console.log("parameters", selectedFactor, selectedCountry)
                                                                         d3.selectAll("#selectCountry")
@@ -38,6 +38,6 @@ Promise.all([ // load multiple files
                                                                                                           vegaEmbed("#bar", bar(selectedFactor, selectedCountry))});
                                                                         d3.selectAll("#selectCompareFactor")
                                                                           .on("change", function (event) {compareFactor = d3.select('#selectCompareFactor').node().value;
-                                                                                                          vegaEmbed("#scatter", scatter(selectedFactor, compareFactor))});
+                                                                                                          vegaEmbed("#scatter", scatter(selectedFactor))});
                                                                     });
 })});
