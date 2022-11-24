@@ -1,16 +1,35 @@
 export default scatter;
 
-function scatter(factor, compare){
+function scatter(factor){
    const spec =  {
                 "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
                 "description": "A scatterplot showing correlation between two death factors",
+                "params": [{"name": "selectedRegion",
+                            "select": {"type": "point", "fields": ["Region"]},
+                            "bind": {
+                              "input": "select",
+                              "name": "Region",
+                              "options": [
+                                null,
+                                "Africa",
+                                "Americas",
+                                "Asia",
+                                "Europe",
+                                "Oceania"]}}],
                 "width": 600,
                 "height": 400,
-                "data": {"url": "Number of Deaths by Risk Factors.csv"},
+                "data": {"url": "scatter.csv"},
                 "mark": "point",
+                "transform": [{"calculate": `datum['${factor}'] / datum.Population * 100`, "as": "Deaths Rate (%)"}],
                 "encoding": {
-                "x": {"field": `${factor}`, "type": "quantitative", "scale": {"zero": false}},
-                "y": {"field": `${compare}`, "type": "quantitative"}
+                "x": {"field": "Deaths Rate (%)", "type": "quantitative", "scale": {"zero": false}},
+                "y": {"field": "GDP per Capita", "type": "quantitative"},
+                "color": {"condition": {"param": "selectedRegion",
+                                        "field": "Region",
+                                        "type": "nominal"},
+                          "value": "#BDBDBD"
+                },
+                "tooltip": {"type": "nominal", "field": "Entity"},
                 }
             }
   
