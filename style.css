@@ -34,3 +34,6 @@ h2, h3{
 #gdp{
     text-align: center;
 }
+.vega-bindings {
+    display: flex;
+  }
