@@ -1,28 +1,28 @@
 factorName,factorType
-Outdoor air pollution,Environment
-High systolic blood pressure,Body
-Diet high in sodium,Diet
-Diet low in whole grains,Diet
-Alcohol use,Substance
-Diet low in fruits,Diet
-Unsafe water source,Environment
-Secondhand smoke,Environment
-Low birth weight,Birth
-Child wasting,Birth
-Unsafe sex,Behavoir
-Household air pollution from solid fuels,Environment
-Diet low in vegetables,Diet
-Low physical activity,Behavoir
+Outdoor Air Pollution,Environment
+High Systolic Blood Pressure,Body
+Diet High in Sodium,Diet
+Diet Low in Whole Grains,Diet
+Alcohol Use,Substance
+Diet Low in Fruits,Diet
+Unsafe Water Source,Environment
+Secondhand Smoke,Environment
+Low Birth Weight,Birth
+Child Wasting,Birth
+Unsafe Sex,Behavoir
+Household Air Pollution from Solid Fuels,Environment
+Diet Low in Vegetables,Diet
+Low Physical Activity,Behavoir
 Smoking,Substance
-High fasting plasma glucose,Body
-Air pollution,Environment
-High body-mass index,Body
-Unsafe sanitation,Environment
-No access to handwashing facility,Environment
-Drug use,Substance
-Low bone mineral density,Body
-Vitamin A deficiency,Body
-Child stunting,Birth
-Discontinued breastfeeding,Birth
-Non-exclusive breastfeeding,Birth
-Iron deficiency,Body
+High Fasting Plasma Glucose,Body
+Air Pollution,Environment
+High Body-Mass Index,Body
+Unsafe Sanitation,Environment
+No Access to Handwashing Facility,Environment
+Drug Use,Substance
+Low Bone Mineral Density,Body
+Vitamin A Deficiency,Body
+Child Stunting,Birth
+Discontinued Breastfeeding,Birth
+Non-Exclusive Breastfeeding,Birth
+Iron Deficiency,Body
