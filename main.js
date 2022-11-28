@@ -1,6 +1,7 @@
 import bubble from "./bubble.js";
 import line from "./line.js";
 import bar from "./bar.js";
+import map from "./map.js";
 import scatter from "./scatter.js";
 
 Promise.all([ // load multiple files
@@ -40,7 +41,7 @@ Promise.all([ // load multiple files
                                                                         document.getElementById("line-country").textContent = selectedCountry + "."
                                                                         vegaEmbed("#bar", bar(selectedFactor, selectedCountry));
                                                                         vegaEmbed("#scatter", scatter(selectedFactor));
-
+                                                                        vegaEmbed("#map", map(selectedFactor));
                                                                         console.log("parameters", selectedFactor, selectedCountry)
                                                                         d3.selectAll("#selectCountry")
                                                                           .on("change", function (event) {selectedCountry = d3.select('#selectCountry').node().value;
