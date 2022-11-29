@@ -3,6 +3,7 @@ import line from "./line.js";
 import bar from "./bar.js";
 import map from "./map.js";
 import scatter from "./scatter.js";
+import allcountries from "./allcountries.js"
 
 Promise.all([ // load multiple files
 	d3.csv('factorType.csv', d3.autoType),
@@ -42,19 +43,19 @@ Promise.all([ // load multiple files
                                                                         vegaEmbed("#bar", bar(selectedFactor, selectedCountry));
                                                                         vegaEmbed("#scatter", scatter(selectedFactor));
                                                                         vegaEmbed("#map", map(selectedFactor));
+                                                                        vegaEmbed("#allcountries", allcountries(selectedFactor));
                                                                         console.log("parameters", selectedFactor, selectedCountry)
                                                                         d3.selectAll("#selectCountry")
                                                                           .on("change", function (event) {selectedCountry = d3.select('#selectCountry').node().value;
                                                                                                           console.log("selectedCountry", selectedCountry);
                                                                                                           console.log("filtered data", mainData.filter(d => d.Entity == selectedCountry))
                                                                                                           vegaEmbed("#line", line(selectedFactor, selectedCountry));
-                                                                                                          document.getElementById("line-text").textContent = "This line chart shows the trend of";
-                                                                                                          document.getElementById("line-factor").textContent = selectedFactor;
-                                                                                                          document.getElementById("line-connect").textContent = "caused the number of deaths from 1990 to 2019 in"
-                                                                                                          document.getElementById("line-country").textContent = selectedCountry + "."
-                                                                                                          vegaEmbed("#bar", bar(selectedFactor, selectedCountry))});
+                                                                                                          vegaEmbed("#bar", bar(selectedFactor, selectedCountry));
+                                                                                                          vegaEmbed("#map", map(selectedFactor, selectedCountry))});
                                                                         d3.selectAll("#selectCompareFactor")
                                                                           .on("change", function (event) {compareFactor = d3.select('#selectCompareFactor').node().value;
-                                                                                                          vegaEmbed("#scatter", scatter(selectedFactor))});
+                                                                                                          vegaEmbed("#scatter", scatter(selectedFactor))
+                                                                                                          vegaEmbed("#allcountries", allcountries(selectedFactor))
+                                                                                                          });
                                                                     });
 })});
