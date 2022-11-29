@@ -23,9 +23,15 @@
         <h3>Authors: Lauren Sampson, Jing Li, Yujia Shi</h3>
         <h3 class="type">Select a type of death factor and a specific death factor to start this exploration: </h3>
         <div class="bubble"></div>
-        <h4 id="selected"></h4>
+        <!--h4 id="selected"></h4-->
+        <div class="select-factor">
+            <span id="select"></span>
+            <span id="selected"></span>
+            <span id="scroll"></span>
+        </div>
+        <h4 id="select-text"></h4>
         <select id="selectCountry">
-            <option value="World">World</option>
+            <option value="the world">World</option>
             <option value="Afghanistan">Afghanistan</option>
             <option value="Albania">Albania</option>
             <option value="Algeria">Algeria</option>
@@ -49,7 +55,7 @@
             <option value="Bermuda">Bermuda</option>
             <option value="Bhutan">Bhutan</option>
             <option value="Bolivia">Bolivia</option>
-            <option value="Bosnia and Herzegowina">Bosnia and Herzegowina</option>
+            <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
             <option value="Botswana">Botswana</option>
             <option value="Brazil">Brazil</option>
             <option value="Brunei">Brunei</option>
@@ -60,7 +66,6 @@
             <option value="Cameroon">Cameroon</option>
             <option value="Canada">Canada</option>
             <option value="Cape Verde">Cape Verde</option>
-            <option value="Cayman Islands">Cayman Islands</option>
             <option value="Central African Republic">Central African Republic</option>
             <option value="Chad">Chad</option>
             <option value="Chile">Chile</option>
@@ -129,7 +134,7 @@
             <option value="Lebanon">Lebanon</option>
             <option value="Lesotho">Lesotho</option>
             <option value="Liberia">Liberia</option>
-            <option value="Libyan">Libyan</option>
+            <option value="Libya">Libya</option>
             <option value="Lithuania">Lithuania</option>
             <option value="Luxembourg">Luxembourg</option>
             <option value="Madagascar">Madagascar</option>
@@ -198,7 +203,7 @@
             <option value="South Korea">South Korea</option>
             <option value="South Sudan">South Sudan</option>
             <option value="Span">Spain</option>
-            <option value="SriLanka">Sri Lanka</option>
+            <option value="Sri Lanka">Sri Lanka</option>
             <option value="Sudan">Sudan</option>
             <option value="Suriname">Suriname</option>
             <option value="Sweden">Sweden</option>
@@ -240,38 +245,18 @@
             document.querySelector("[class$=ss-main]").style.display = "none";
         </script>
         <div id="line"></div>
+        <div class="TextWrap">
+            <span id="line-text"></span>
+            <span id="line-factor"></span>
+            <span id="line-connect"></span>
+            <span id="line-country"></span>
+        </div>
         <div id="bar"></div>
-        <h4 id="gdp"></h4>
-        <!--select id="selectCompareFactor">
-            <option value="Outdoor air pollution">Outdoor air pollution</option>
-            <option value="High systolic blood pressure">High systolic blood pressure</option>
-            <option value="Diet high in sodium">Diet high in sodium</option>
-            <option value="Diet low in whole grains">Diet low in whole grains</option>
-            <option value="Alcohol use">Alcohol use</option>
-            <option value="Diet low in fruits">Diet low in fruits</option>
-            <option value="Unsafe water source">Unsafe water source</option>
-            <option value="Secondhand smoke">Secondhand smoke</option>
-            <option value="Low birth weight">Low birth weight</option>
-            <option value="Child wasting">Child wasting</option>
-            <option value="Unsafe sex">Unsafe sex</option>
-            <option value="Diet low in nuts and seeds">Diet low in nuts and seeds</option>
-            <option value="Household air pollution from solid fuels">Household air pollution from solid fuels</option>
-            <option value="Diet low in vegetables">Diet low in vegetables</option>
-            <option value="Low physical activity">Low physical activity</option>
-            <option value="Smoking">Smoking</option>
-            <option value="High fasting plasma glucose">High fasting plasma glucose</option>
-            <option value="Air pollution">Air pollution</option>
-            <option value="High body-mass index">High body-mass index</option>
-            <option value="Unsafe sanitation">Unsafe sanitation</option>
-            <option value="No access to handwashing facility">No access to handwashing facility</option>
-            <option value="Drug use">Drug use</option>
-            <option value="Low bone mineral density">Low bone mineral density</option>
-            <option value="Vitamin A deficiency">Vitamin A deficiency</option>
-            <option value="Child stunting">Child stunting</option>
-            <option value="Discontinued breastfeeding">Discontinued breastfeeding</option>
-            <option value="Non-exclusive breastfeeding">Non-exclusive breastfeeding</option>
-            <option value="Iron deficiency">Iron deficiency</option>
-        </select-->
+        <div class="select-region">
+            <span id="gdp"></span>
+            <span id="factor"></span>
+            <span id="region"></span>
+        </div>
         <div id="scatter"></div>
         <div id="map"></div>
         <div id="allcountries"></div>

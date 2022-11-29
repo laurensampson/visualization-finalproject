@@ -19,15 +19,27 @@ Promise.all([ // load multiple files
                                     d3.selectAll(".factors")
                                       .on("click", function (event, d) {selectedFactor = d.factorName;
                                                                         console.log("selectedFactor", selectedFactor)
-                                                                        document.getElementById("selected").textContent = "You have selected " + selectedFactor + ". Scroll down to embark the journey";
-                                                                        document.getElementById("gdp").textContent = "Explore a country's wealth and deaths from this factor. Select any region you want to see.";
-                                                                        document.querySelector("[class$=ss-main]").style.display = "block";
+                                                                        //document.getElementById("selected").textContent = "You have selected " + selectedFactor + ". Scroll down to embark the journey";
+                                                                        document.getElementById("select").textContent = "You have selected ";
+                                                                        document.getElementById("selected").textContent = selectedFactor + ".";
+                                                                        document.getElementById("scroll").textContent = "Scroll down to embark the journey.";
+                                                                        document.getElementById("select-text").textContent = "Select a Country to See Its Details";
+                                                                        document.getElementById("gdp").textContent = "Explore how a country's wealth and death rate from";
+                                                                        document.getElementById("factor").textContent = selectedFactor;
+                                                                        document.getElementById("region").textContent = "are related. Select any region you want to see.";
+                                                                        document.querySelector("[class$=ss-main]").style.display = "inline-block";
+                                                                        //document.querySelector("[class$=ss-main]").style.max-width = "100px";
                                                                         document.querySelector("[class$=ss-main]").style.width = "400px";
+                                                                        document.querySelector("[class$=ss-main]").style.height = "50px";
                                                                         document.querySelector("[class$=ss-main]").style.margin = "auto";
                                                                         //document.querySelector("#selectCompareFactor").style.display = "block";
                                                                         selectedCountry = d3.select('#selectCountry').node().value;
                                                                         //compareFactor = d3.select('#selectCompareFactor').node().value;
                                                                         vegaEmbed("#line", line(selectedFactor, selectedCountry));
+                                                                        document.getElementById("line-text").textContent = "This line chart shows the trend of";
+                                                                        document.getElementById("line-factor").textContent = selectedFactor;
+                                                                        document.getElementById("line-connect").textContent = "caused the number of deaths from 1990 to 2019 in"
+                                                                        document.getElementById("line-country").textContent = selectedCountry + "."
                                                                         vegaEmbed("#bar", bar(selectedFactor, selectedCountry));
                                                                         vegaEmbed("#scatter", scatter(selectedFactor));
                                                                         vegaEmbed("#map", map(selectedFactor));
@@ -39,9 +51,7 @@ Promise.all([ // load multiple files
                                                                                                           console.log("filtered data", mainData.filter(d => d.Entity == selectedCountry))
                                                                                                           vegaEmbed("#line", line(selectedFactor, selectedCountry));
                                                                                                           vegaEmbed("#bar", bar(selectedFactor, selectedCountry));
-                                                                                                          vegaEmbed("#map", map(selectedFactor, selectedCountry))
-                                                                                                          });
-
+                                                                                                          vegaEmbed("#map", map(selectedFactor, selectedCountry))});
                                                                         d3.selectAll("#selectCompareFactor")
                                                                           .on("change", function (event) {compareFactor = d3.select('#selectCompareFactor').node().value;
                                                                                                           vegaEmbed("#scatter", scatter(selectedFactor))
