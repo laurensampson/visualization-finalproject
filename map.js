@@ -7,7 +7,7 @@ function map(factor){
         "width": 700,
         "height": 300,
         "data": {
-            "url": "data/world-10m.json",
+            "url": "data/world-110m.json",
             "format": {
               "type": "topojson",
               "feature": "countries"
