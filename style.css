@@ -63,3 +63,6 @@ h2, h3{
 #line-country {
     text-decoration: wavy underline;
 }
+#map {
+    margin-left: 150px;
+}
