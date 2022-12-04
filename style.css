@@ -31,6 +31,9 @@ h2, h3{
     float: left;
     margin-left: 50px;
 }
+#scatter-title {
+    margin-top: 25px;
+}
 #selectCompareFactor{
     display: none;
     width: 400px;
