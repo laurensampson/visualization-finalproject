@@ -1,11 +1,9 @@
 export default map;
 
-function map(factor){
+function map(factor, domMax){
     const spec = {
         "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
         "description": "A world map showing the death factor in color gradient corresponding to each country on the map",
-        //"width": 1400,
-        //"height": 500,
         "data": {"url": "map.csv"},
         "params":[{"name": "year", 
                   "value": 1990,
@@ -13,10 +11,8 @@ function map(factor){
                           "min": 1990,
                           "max": 2019,
                           "step": 1}},
-                  {
-                    "name": "invalidCode",
-                    "value": "M"
-                  }],
+                  {"name": "domMax",
+                   "value": "max"}],
         "vconcat": [{
           "width": 800,
           "height": 400,
@@ -55,7 +51,7 @@ function map(factor){
                 }],
                 "sort": [{"type": "quantitative", "field": `Deaths`, "order": "descending" }]
               },
-              {"filter": "datum.count <=10"}
+              {"filter": "datum.count <= 10"}
             ],
             "mark": "bar",
             "encoding": {
@@ -63,12 +59,12 @@ function map(factor){
                   "field": "Code",
                   "type": "nominal",
                   "title": "Country",
-                  "sort": {"field": `${factor}`, "order":"descending"}
+                  "sort": {"field": `${factor}`, "order":"descending"},
               },
               "y": {
                   "field": `Deaths`,
-                  "type": "quantitative"
-                  //"sort": null
+                  "type": "quantitative",
+                  "scale": {"domain": [0,`${domMax}`]}
               }
           }}]}
 

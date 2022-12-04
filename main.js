@@ -7,10 +7,12 @@ import allcountries from "./allcountries.js"
 
 Promise.all([ // load multiple files
 	d3.csv('factorType.csv', d3.autoType),
-  d3.csv('Number of Deaths by Risk Factors.csv', d3.autoType)
+  d3.csv('Number of Deaths by Risk Factors.csv', d3.autoType),
+  d3.csv('map.csv', d3.autoType)
 ]).then(data=>{
     const type = data[0];
     const mainData = data[1];
+    const mapData = data[2];
     const bubbleChart = bubble(type, ".bubble");
     var selectedFactor, selectedCountry, compareFactor; // user selected factor and country
     
@@ -42,7 +44,10 @@ Promise.all([ // load multiple files
                                                                         document.getElementById("line-country").textContent = selectedCountry + "."
                                                                         vegaEmbed("#bar", bar(selectedFactor, selectedCountry));
                                                                         vegaEmbed("#scatter", scatter(selectedFactor));
-                                                                        vegaEmbed("#map", map(selectedFactor));
+                                                                        let axisMax = mapData[0][selectedFactor];
+                                                                        console.log("axisMax ", axisMax);
+                                                                        //console.log("axisMax", `axisMax[${selectedFactor}]`);
+                                                                        vegaEmbed("#map", map(selectedFactor, axisMax));
                                                                         vegaEmbed("#allcountries", allcountries(selectedFactor));
                                                                         console.log("parameters", selectedFactor, selectedCountry)
                                                                         d3.selectAll("#selectCountry")
