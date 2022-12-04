@@ -32,14 +32,15 @@ function map(factor, domMax){
           {"filter": "datum.Year==year"},
           ],
           "projection": { "type":"equirectangular"},
-          "mark": "geoshape", 
+          "mark": {"type": "geoshape", 
+                   "stroke": "gray"},
           "encoding":{"color":{"field": `${factor}`, "type": "quantitative"},
                       "tooltip": [
                         {"type": "nominal", "field": "Code"},
                         {"field": `${factor}`, "type": "quantitative"}]}},
           {
             "width": 800,
-            "height": 200,
+            "height": 100,
             "transform": [
               {"filter": "datum.Year==year"},
               {"filter": "datum.id!=0"},

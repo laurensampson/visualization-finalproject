@@ -5,7 +5,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Patrick+Hand:300,300italic,700,700italic">
+        <!--link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Patrick+Hand:300,300italic,700,700italic"-->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/slim-select/1.27.1/slimselect.min.js"></script>
@@ -21,6 +21,7 @@
         <h1 class="animate__animated animate__wobble">Do you have a secret hunch about how you will die?</h1>
         <h2>A deep dive of death factors from 1990 to 2019 around the world</h2>
         <h3>Authors: Lauren Sampson, Jing Li, Yujia Shi</h3>
+        <p class="to-do"><mark>I believe we need some introduction here</mark></p>
         <h3 class="type">Select a type of death factor and a specific death factor to start this exploration: </h3>
         <div class="bubble"></div>
         <!--h4 id="selected"></h4-->
@@ -29,6 +30,23 @@
             <span id="selected"></span>
             <span id="scroll"></span>
         </div>
+        <h2 class="section-title" id="world-overview"></h2>
+        <h3 class="subsection-title" id="map-title"></h3>
+        <div id="map"></div>
+        <div class="map-text">
+            <span id="world-instruction"></span>
+            <span id="instruction-factor"></span>
+            <span id="bar-instruction"></span>
+            <span id="slider-instruction"></span>
+        </div>
+        <h3 class="subsection-title" id="scatter-title"></h3>
+        <div id="scatter"></div>
+        <div class="select-region">
+            <span id="gdp"></span>
+            <span id="factor"></span>
+            <span id="region"></span>
+        </div>
+        <h2 class="section-title" id="country-view"></h2>
         <h4 id="select-text"></h4>
         <select id="selectCountry">
             <option value="the world">World</option>
@@ -250,15 +268,9 @@
             <span id="line-factor"></span>
             <span id="line-connect"></span>
             <span id="line-country"></span>
+            <span id="select-another"></span>
         </div>
-        <div id="bar"></div>
-        <div class="select-region">
-            <span id="gdp"></span>
-            <span id="factor"></span>
-            <span id="region"></span>
-        </div>
-        <div id="scatter"></div>
-        <div id="map"></div>
+        <!--div id="bar"></div-->
         <div id="allcountries"></div>
     </body>
 </html>
