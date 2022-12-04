@@ -59,5 +59,6 @@ Promise.all([ // load multiple files
                                                                                                           console.log("filtered data", mainData.filter(d => d.Entity == selectedCountry))
                                                                                                           vegaEmbed("#line", line(selectedFactor, selectedCountry));
                                                                                                           document.getElementById("line-country").textContent = selectedCountry + "."});
+                                                                        document.querySelector("#btn").style.display = "block";
                                                                     });
 })});
