@@ -300,7 +300,7 @@
         <!--div id="bar"></div-->
         <!--div id="allcountries"></div-->
         <div id="conclusion">
-            <button id ="btn" type="button" onclick="toggleText()" style="margin-left: 550px;">Click to Expand the Conclusion</button>
+            <button id ="btn" type="button" onclick="toggleText()" style="text-align: center">Click to Expand the Conclusion</button>
             <div id="conclude" style="display: none; font-size: large;">
                 <h6>
                     We hope you enjoyed learning more about the various factors that contribute to death globally. 
@@ -396,8 +396,10 @@
                 function toggleText(){
                     var text = document.getElementById("conclude");
                     if (text.style.display === "none") {
+                        document.getElementById("btn").innerHTML = "Click to Collapse the Conclusion";
                         text.style.display = "block";
                     } else {
+                        document.getElementById("btn").innerHTML = "Click to Expand the Conclusion";
                         text.style.display = "none"
                     }
                 }
