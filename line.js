@@ -8,7 +8,7 @@ function line(factor, country){
                   "encoding": {"x": {"field": "Year", "type": "temporal", "scale": {"zero": false}},
                                "y": {"field": `${factor}`, "type": "quantitative", "scale": {"zero": false}, "title": "Death (people)"},
                                "order": {"field": "Year"}},
-                  "width": 550,
-                  "height": 350}
+                  "width": 700,
+                  "height": 400}
     return spec;
 }

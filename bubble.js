@@ -12,7 +12,7 @@ function bubble(data, container){
                   .attr("height", height + margin.top + margin.bottom)
                   .append("g")
                   .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-    var colors = d3.scaleOrdinal(d3.schemeTableau10);
+    var colors = d3.scaleOrdinal(d3.schemeCategory10);
     var factorType = new Set(data.map(function(array){return array.factorType;}));
     const xScale = d3.scaleBand()
                      .paddingInner(0.1);
@@ -74,7 +74,6 @@ function bubble(data, container){
                                               .attr("opacity", 0.75)})
                .on("mouseout", function() {d3.select(this)
                                              .attr("opacity", 1)})
-               //.on("click", function (e, d) {returnFactor = d.factorName})
                .merge(factors)
                .transition()
                .delay(100)
@@ -103,7 +102,7 @@ function bubble(data, container){
              .delay(100)
              .attr("fill-opacity", 1)
              .attr("x", d => xScale(d.factorName) - 80)
-             .attr("y", d => 315 - d.factorName.length * 0.25)
+             .attr("y", d => 315 - d.factorName.length * 0.3)
              .attr("width", 160)
              .attr("height", 160)
              .attr("stroke", "black")
