@@ -127,8 +127,10 @@ circle {
 #btn:hover {
     background-color: #555; 
 }
-#logo{
-    cursor: pointer; 
+.logo{
     display: inline-block;
     vertical-align: middle;
+}
+#pic{
+    cursor: pointer; 
 }
