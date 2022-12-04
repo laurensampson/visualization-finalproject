@@ -14,7 +14,7 @@ Promise.all([ // load multiple files
     const mainData = data[1];
     const mapData = data[2];
     const bubbleChart = bubble(type, ".bubble");
-    var selectedFactor, selectedCountry, compareFactor; // user selected factor and country
+    var selectedFactor, selectedCountry; // user selected factor and country
     
     d3.selectAll(".types")
       .on("click", function (e, d) {bubbleChart.showFactor(d)

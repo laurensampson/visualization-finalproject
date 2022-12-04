@@ -23,6 +23,27 @@
         <h3>Authors: Lauren Sampson, Jing Li, Yujia Shi</h3>
         <p class="to-do"><mark>I believe we need some introduction here</mark></p>
         <h3 class="type">Select a type of death factor and a specific death factor to start this exploration: </h3>
+        <button onclick="topFunction()" id="myBtn" title="Go to top">Back to Top to Restart</button>
+        <script>
+            // Get the button:
+            let mybutton = document.getElementById("myBtn");
+
+            // When the user scrolls down 20px from the top of the document, show the button
+            window.onscroll = function() {scrollFunction()};
+
+            function scrollFunction() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+            }
+            // When the user clicks on the button, scroll to the top of the document
+            function topFunction() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+            }
+        </script>
         <div class="bubble"></div>
         <!--h4 id="selected"></h4-->
         <div class="select-factor">
