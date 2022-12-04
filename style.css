@@ -9,6 +9,16 @@ h1 {
 h2, h3{
     text-align: center;
 }
+h5 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 40px;
+}
+h6 {
+    text-align: center;
+    margin-left: 200px;
+    margin-right: 200px;
+}
 .type {
     
     font-weight: bold;
@@ -75,8 +85,10 @@ h2, h3{
 circle {
     cursor: pointer;
 }
-.to-do {
+.introduction{
     text-align: center;
+    margin-left: 250px;
+    margin-right: 250px;
 }
 .section-title {
     margin-top: 50px;
