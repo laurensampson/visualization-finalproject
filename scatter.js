@@ -13,7 +13,7 @@ function scatter(factor){
                               "labels": ["All", "Africa", "Americas", "Asia", "Europe", "Oceania"]}}],
                 "width": 800,
                 "height": 400,
-                "data": {"url": "scatter.csv"},
+                "data": {"url": "/Data/scatter.csv"},
                 "mark": "point",
                 "transform": [{"calculate": `datum['${factor}'] / datum.Population * 100`, "as": "Deaths Rate (%)"}],
                 "encoding": {

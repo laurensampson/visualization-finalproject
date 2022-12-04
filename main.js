@@ -6,9 +6,9 @@ import scatter from "./scatter.js";
 import allcountries from "./allcountries.js"
 
 Promise.all([ // load multiple files
-	d3.csv('factorType.csv', d3.autoType),
-  d3.csv('Number of Deaths by Risk Factors.csv', d3.autoType),
-  d3.csv('map.csv', d3.autoType)
+	d3.csv('/Data/factorType.csv', d3.autoType),
+  d3.csv('/Data/Number of Deaths by Risk Factors.csv', d3.autoType),
+  d3.csv('/Data/map.csv', d3.autoType)
 ]).then(data=>{
     const type = data[0];
     const mainData = data[1];
