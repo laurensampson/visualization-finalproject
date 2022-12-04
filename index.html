@@ -21,27 +21,33 @@
         <h1 class="animate__animated animate__wobble">Do you have a secret hunch about how you will die?</h1>
         <h2>A deep dive of death factors from 1990 to 2019 around the world</h2>
         <h3>Authors: Lauren Sampson, Jing Li, Yujia Shi</h3>
-        <p class="introduction">Death is an inevitability that all living beings on earth will face. Looking at the way people die, as it relates to lifestyle, environment, location, socio-economic, and bodily causes, is one way that we can analyze the leading causes of death — whether that be premature or simply the way of nature. In this study we aim to shed light on causes of death across the world, broken down by country, spanning the thirty year period of 1990-2019.</p>
+        <p class="introduction">
+            Death is an inevitability that all living beings on earth will face. 
+            Looking at the way people die, as it relates to lifestyle, environment, 
+            location, socio-economic, and bodily causes, is one way that we can 
+            analyze the leading causes of death — whether that be premature or 
+            simply the way of nature. In this study we aim to shed light on causes 
+            of death across the world, broken down by country, spanning the thirty 
+            year period of 1990-2019.
+        </p>
         <h3 class="type">Select a type of death factor and a specific death factor to start this exploration: </h3>
         <button onclick="topFunction()" id="myBtn" title="Go to top">Back to Top to Restart</button>
         <script>
             // Get the button:
             let mybutton = document.getElementById("myBtn");
-
             // When the user scrolls down 20px from the top of the document, show the button
             window.onscroll = function() {scrollFunction()};
-
             function scrollFunction() {
-            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-                mybutton.style.display = "block";
-            } else {
-                mybutton.style.display = "none";
-            }
+                if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                    mybutton.style.display = "block";
+                } else {
+                    mybutton.style.display = "none";
+                }
             }
             // When the user clicks on the button, scroll to the top of the document
             function topFunction() {
-            document.body.scrollTop = 0; // For Safari
-            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+                document.body.scrollTop = 0; // For Safari
+                document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
             }
         </script>
         <div class="bubble"></div>
@@ -296,7 +302,8 @@
         <div id="conclusion">
             <button id ="btn" type="button" onclick="toggleText()" style="margin-left: 550px;">Click to Expand the Conclusion</button>
             <div id="conclude" style="display: none; font-size: large;">
-                <h6>We hope you enjoyed learning more about the various factors that contribute to death globally. 
+                <h6>
+                    We hope you enjoyed learning more about the various factors that contribute to death globally. 
                     For more information you can visit the link below to find out how the World Health Organization 
                     (WHO) defines the leading causes of death. 
                     <a style = "font-weight: bold;"href="https://www.who.int/news-room/fact-sheets/detail/the-top-10-causes-of-death">
@@ -304,7 +311,9 @@
                     </a>
                 </h6>
                 </br>
-                <h6>In addition, we would like to share with you some helpful resources relating to each death factor category.</h6>
+                <h6>
+                    In addition, we would like to share with you some helpful resources relating to each death factor category.
+                </h6>
                 <div class="row">
                     <div class="column">
                         <a href="https://www.nature.org/en-us/">
