@@ -31,9 +31,9 @@ h2, h3{
     float: left;
     margin-left: 50px;
 }
-#scatter-title {
+/*#scatter-title {
     margin-top: 50px;
-}
+}*/
 #selectCompareFactor{
     display: none;
     width: 400px;
@@ -86,7 +86,7 @@ circle {
     margin-top: 100px;
     margin-right: 25px;
     font-size: 25px;
-    margin-bottom: 225px;
+    margin-bottom: 250px;
 }
 .select-region {
     font-size: 25px;
