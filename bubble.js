@@ -12,7 +12,7 @@ function bubble(data, container){
                   .attr("height", height + margin.top + margin.bottom)
                   .append("g")
                   .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-    var colors = d3.scaleOrdinal(d3.schemeTableau10);
+    var colors = d3.scaleOrdinal(d3.schemeCategory10);
     var factorType = new Set(data.map(function(array){return array.factorType;}));
     const xScale = d3.scaleBand()
                      .paddingInner(0.1);

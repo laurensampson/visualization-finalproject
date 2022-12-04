@@ -34,7 +34,7 @@ function map(factor, domMax){
           "projection": { "type":"equirectangular"},
           "mark": {"type": "geoshape", 
                    "stroke": "gray"},
-          "encoding":{"color":{"field": `${factor}`, "type": "quantitative"},
+          "encoding":{"color":{"field": `${factor}`, "type": "quantitative","scale": {"scheme": "oranges"}},
                       "tooltip": [
                         {"type": "nominal", "field": "Code"},
                         {"field": `${factor}`, "type": "quantitative"}]}},
@@ -66,7 +66,8 @@ function map(factor, domMax){
                   "field": `Deaths`,
                   "type": "quantitative",
                   "scale": {"domain": [0,`${domMax}`]}
-              }
+              },
+              "color": {"value": "orange"}
           }}]}
 
           

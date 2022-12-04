@@ -21,7 +21,6 @@ Promise.all([ // load multiple files
                                     d3.selectAll(".factors")
                                       .on("click", function (event, d) {selectedFactor = d.factorName;
                                                                         console.log("selectedFactor", selectedFactor)
-                                                                        //document.getElementById("selected").textContent = "You have selected " + selectedFactor + ". Scroll down to embark the journey";
                                                                         document.getElementById("select").textContent = "You have selected ";
                                                                         document.getElementById("selected").textContent = selectedFactor + ".";
                                                                         document.getElementById("scroll").textContent = "Scroll down to embark the journey.";
@@ -38,24 +37,19 @@ Promise.all([ // load multiple files
                                                                         document.getElementById("region").textContent = "are related. Data for GDP per capita and death rate are more accurate to reflect the actual situation since countries have different population sizes. The data are from 2019, which is the latest year for all available data. Please select any region you want to see down the bottom.";
                                                                         document.getElementById("country-view").textContent = "Detailed Trend of Each Country for " + selectedFactor + ":";
                                                                         document.querySelector("[class$=ss-main]").style.display = "inline-block";
-                                                                        //document.querySelector("[class$=ss-main]").style.max-width = "100px";
                                                                         document.querySelector("[class$=ss-main]").style.width = "400px";
                                                                         document.querySelector("[class$=ss-main]").style.height = "50px";
                                                                         document.querySelector("[class$=ss-main]").style.margin = "auto";
-                                                                        //document.querySelector("#selectCompareFactor").style.display = "block";
                                                                         selectedCountry = d3.select('#selectCountry').node().value;
-                                                                        //compareFactor = d3.select('#selectCompareFactor').node().value;
                                                                         vegaEmbed("#line", line(selectedFactor, selectedCountry));
                                                                         document.getElementById("line-text").textContent = "This line chart shows the trend of";
                                                                         document.getElementById("line-factor").textContent = selectedFactor;
                                                                         document.getElementById("line-connect").textContent = "caused the number of deaths from 1990 to 2019 in"
                                                                         document.getElementById("line-country").textContent = selectedCountry + ". ";
                                                                         document.getElementById("select-another").textContent = "Please feel free to select another country to see its trend. Even with the same death factor, two different countries might have very distinct trends, especially between developed countries and developing countries."
-                                                                        //vegaEmbed("#bar", bar(selectedFactor, selectedCountry));
                                                                         vegaEmbed("#scatter", scatter(selectedFactor));
                                                                         let axisMax = mapData[0][selectedFactor];
                                                                         console.log("axisMax ", axisMax);
-                                                                        //console.log("axisMax", `axisMax[${selectedFactor}]`);
                                                                         vegaEmbed("#map", map(selectedFactor, axisMax));
                                                                         vegaEmbed("#allcountries", allcountries(selectedFactor));
                                                                         console.log("parameters", selectedFactor, selectedCountry)
@@ -64,13 +58,6 @@ Promise.all([ // load multiple files
                                                                                                           console.log("selectedCountry", selectedCountry);
                                                                                                           console.log("filtered data", mainData.filter(d => d.Entity == selectedCountry))
                                                                                                           vegaEmbed("#line", line(selectedFactor, selectedCountry));
-                                                                                                          //vegaEmbed("#bar", bar(selectedFactor, selectedCountry));
-                                                                                                          //vegaEmbed("#map", map(selectedFactor, axisMax))
                                                                                                           document.getElementById("line-country").textContent = selectedCountry + "."});
-                                                                        d3.selectAll("#selectCompareFactor")
-                                                                          .on("change", function (event) {compareFactor = d3.select('#selectCompareFactor').node().value;
-                                                                                                          vegaEmbed("#scatter", scatter(selectedFactor))
-                                                                                                          vegaEmbed("#allcountries", allcountries(selectedFactor))
-                                                                                                          });
                                                                     });
 })});

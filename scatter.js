@@ -21,7 +21,8 @@ function scatter(factor){
                 "y": {"field": "GDP per Capita (USD)", "type": "quantitative"},
                 "color": {"condition": {"param": "selectedRegion",
                                         "field": "Region",
-                                        "type": "nominal"},
+                                        "type": "nominal",
+                                        "scale": {"scheme": "category10"}},
                           "value": "#BDBDBD"
                 },
                 "tooltip": {"type": "nominal", "field": "Entity"},
