@@ -21,6 +21,9 @@
         <h1 class="animate__animated animate__wobble">Do you have a secret hunch about how you will die?</h1>
         <h2>A deep dive of death factors from 1990 to 2019 around the world</h2>
         <h3>Authors: Lauren Sampson, Jing Li, Yujia Shi</h3>
+        <div class="about-button" style="text-align: center;">
+            <a href="./about.html" style="font-size:20px; font-weight:bold;"><button class="about">About</button></a>
+        </div>
         <p class="introduction">
             Death is an inevitability that all living beings on earth will face. 
             Looking at the way people die, as it relates to lifestyle, environment, 
@@ -30,9 +33,6 @@
             of death across the world, broken down by country, spanning the thirty 
             year period of 1990-2019.
         </p>
-        <div class="about-button" style="text-align: center;">
-            <a href="./about.html" style="font-size:20px; font-weight:bold;">About</a>
-        </div>
         <h3 class="type">Select a type of death factor and a specific death factor to start this exploration: </h3>
         <button onclick="topFunction()" id="myBtn" title="Go to top">Back to Top to Restart</button>
         <script>
@@ -402,6 +402,7 @@
                     if (text.style.display === "none") {
                         document.getElementById("btn").innerHTML = "Click to Collapse the Conclusion";
                         text.style.display = "block";
+                        window.scrollBy(0, 200);
                     } else {
                         document.getElementById("btn").innerHTML = "Click to Expand the Conclusion";
                         text.style.display = "none"

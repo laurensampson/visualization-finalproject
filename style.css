@@ -116,7 +116,7 @@ circle {
     border-color: #555;
     font-size: 18px; 
 }
-#myBtn:hover, #btn:hover {
+#myBtn:hover, #btn:hover, .about:hover {
     background-color: #555; 
 }
 #btn {
@@ -130,6 +130,14 @@ circle {
     font-size: 18px; 
     text-align: center;
     margin-top: 250px;
+}
+.about {
+    background-color: #000;
+    border-radius: 10px;
+    border-radius: 10px; 
+    border-color: #555;
+    font-size: 18px; 
+    text-align: center;
 }
 .logo{
     display: inline-block;

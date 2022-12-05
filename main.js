@@ -27,11 +27,14 @@ Promise.all([ // load multiple files
                                       .style("stroke-width", "3px");
                                     d3.selectAll(".factors")
                                       .on("click", function (event, d) {selectedFactor = d.factorName;
-                                                  d3.selectAll(".factors")
-                                                  .style("stroke", "none");
-                                                d3.select(this)
-                                                  .style("stroke", "black")
-                                                  .style("stroke-width", "3px");
+                                                                        d3.selectAll(".factors")
+                                                                          .style("stroke", "none");
+                                                                        d3.select(this)
+                                                                          .style("stroke", "black")
+                                                                          .style("stroke-width", "3px");
+                                                                        if (document.body.scrollTop < 150 && document.documentElement.scrollTop < 150){
+                                                                          window.scrollBy(0, 150);
+                                                                        }
                                                                         console.log("selectedFactor", selectedFactor)
                                                                         document.getElementById("select").textContent = "You have selected ";
                                                                         document.getElementById("selected").textContent = selectedFactor + ".";
