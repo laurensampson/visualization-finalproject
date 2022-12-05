@@ -18,8 +18,20 @@ Promise.all([ // load multiple files
     
     d3.selectAll(".types")
       .on("click", function (e, d) {bubbleChart.showFactor(d)
+                                    d3.selectAll(".types")
+                                      .style("stroke", "none");
+                                    d3.selectAll(".factors")
+                                      .style("stroke", "none");
+                                    d3.select(this)
+                                      .style("stroke", "black")
+                                      .style("stroke-width", "3px");
                                     d3.selectAll(".factors")
                                       .on("click", function (event, d) {selectedFactor = d.factorName;
+                                                  d3.selectAll(".factors")
+                                                  .style("stroke", "none");
+                                                d3.select(this)
+                                                  .style("stroke", "black")
+                                                  .style("stroke-width", "3px");
                                                                         console.log("selectedFactor", selectedFactor)
                                                                         document.getElementById("select").textContent = "You have selected ";
                                                                         document.getElementById("selected").textContent = selectedFactor + ".";
