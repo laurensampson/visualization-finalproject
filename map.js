@@ -4,7 +4,7 @@ function map(factor, domMax){
     const spec = {
         "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
         "description": "A world map showing the death factor in color gradient corresponding to each country on the map",
-        "data": {"url": "./Data/map.csv"},
+        "data": {"url": "./Assets/Data/map.csv"},
         "params":[{"name": "year", 
                   "value": 1990,
                   "bind": {"input": "range",

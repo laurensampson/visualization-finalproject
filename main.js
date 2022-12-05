@@ -1,14 +1,14 @@
 import bubble from "./bubble.js";
 import line from "./line.js";
-import bar from "./bar.js";
+// import bar from "./bar.js";
 import map from "./map.js";
 import scatter from "./scatter.js";
-import allcountries from "./allcountries.js"
+// import allcountries from "./allcountries.js"
 
 Promise.all([ // load multiple files
-	d3.csv('./Data/factorType.csv', d3.autoType),
-  d3.csv('./Data/Number of Deaths by Risk Factors.csv', d3.autoType),
-  d3.csv('./Data/map.csv', d3.autoType)
+	d3.csv('./Assets/Data/factorType.csv', d3.autoType),
+  d3.csv('./Assets/Data/Number of Deaths by Risk Factors.csv', d3.autoType),
+  d3.csv('./Assets/Data/map.csv', d3.autoType)
 ]).then(data=>{
     const type = data[0];
     const mainData = data[1];
@@ -66,7 +66,7 @@ Promise.all([ // load multiple files
                                                                         let axisMax = mapData[0][selectedFactor];
                                                                         console.log("axisMax ", axisMax);
                                                                         vegaEmbed("#map", map(selectedFactor, axisMax));
-                                                                        vegaEmbed("#allcountries", allcountries(selectedFactor));
+                                                                        // vegaEmbed("#allcountries", allcountries(selectedFactor));
                                                                         console.log("parameters", selectedFactor, selectedCountry)
                                                                         d3.selectAll("#selectCountry")
                                                                           .on("change", function (event) {selectedCountry = d3.select('#selectCountry').node().value;
