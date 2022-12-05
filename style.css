@@ -95,7 +95,7 @@ circle {
     margin-top: 100px;
     margin-right: 25px;
     font-size: 25px;
-    margin-bottom: 250px;
+    margin-bottom: 300px;
 }
 .select-region {
     font-size: 25px;
@@ -104,7 +104,7 @@ circle {
     margin-left: 25px;
     margin-bottom: 250px;
 }
-#myBtn{
+#myBtn {
     display: none; 
     background-color: #000;
     position: fixed; 
@@ -116,16 +116,20 @@ circle {
     border-color: #555;
     font-size: 18px; 
 }
-#myBtn:hover {
+#myBtn:hover, #btn:hover {
     background-color: #555; 
 }
 #btn {
     display: none;
+    margin: 0 auto;
+    margin-bottom: 30px;
     background-color: #000;
     border-radius: 10px;
-}
-#btn:hover {
-    background-color: #555; 
+    border-radius: 10px; 
+    border-color: #555;
+    font-size: 18px; 
+    text-align: center;
+    margin-top: 250px;
 }
 .logo{
     display: inline-block;

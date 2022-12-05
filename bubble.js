@@ -35,7 +35,7 @@ function bubble(data, container){
          .delay(1000)
          .attr("cx", d => xScale(d))
          .attr("cy", 75)
-         .attr("r", 100)
+         .attr("r", 95)
          .attr("fill", d => colors(d));
     var labels = svg.selectAll("text")
          .data(factorType)
@@ -54,7 +54,8 @@ function bubble(data, container){
           .attr("dy", 80)
           .text(d => d)
           .style("font-weight", "bold")
-          .style("font-size", "20px");
+          .style("font-size", "20px")
+          .style("fill", "white");
     function showFactor(type) {
         console.log(type);
         var selectedFactors = data.filter(d => d.factorType == type);
@@ -68,7 +69,7 @@ function bubble(data, container){
                .attr("class", "factors")
                .attr("cx", width / 2)
                .attr("cy", 325)
-               .attr("r", 90)
+               .attr("r", 85)
                .attr("fill", d => colors(d.factorType))
                .on("mouseover", function() {d3.select(this)
                                               .attr("opacity", 0.75)})
@@ -97,6 +98,7 @@ function bubble(data, container){
              .append("p")
              .text(d => d.factorName)
              .style("font-size", "15px")
+             .style("color", "white")
              .merge(names)
              .transition()
              .delay(100)
@@ -109,7 +111,7 @@ function bubble(data, container){
              .text(d => d.factorName)
              .style("font-weight", "bold")
              .style("font-size", "15px")
-             .style("color", "black")
+             .style("color", "white");
         names.exit()
              .remove();
     }

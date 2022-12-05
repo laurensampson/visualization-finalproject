@@ -18,8 +18,20 @@ Promise.all([ // load multiple files
     
     d3.selectAll(".types")
       .on("click", function (e, d) {bubbleChart.showFactor(d)
+                                    d3.selectAll(".types")
+                                      .style("stroke", "none");
+                                    d3.selectAll(".factors")
+                                      .style("stroke", "none");
+                                    d3.select(this)
+                                      .style("stroke", "black")
+                                      .style("stroke-width", "3px");
                                     d3.selectAll(".factors")
                                       .on("click", function (event, d) {selectedFactor = d.factorName;
+                                                  d3.selectAll(".factors")
+                                                  .style("stroke", "none");
+                                                d3.select(this)
+                                                  .style("stroke", "black")
+                                                  .style("stroke-width", "3px");
                                                                         console.log("selectedFactor", selectedFactor)
                                                                         document.getElementById("select").textContent = "You have selected ";
                                                                         document.getElementById("selected").textContent = selectedFactor + ".";
@@ -59,6 +71,6 @@ Promise.all([ // load multiple files
                                                                                                           console.log("filtered data", mainData.filter(d => d.Entity == selectedCountry))
                                                                                                           vegaEmbed("#line", line(selectedFactor, selectedCountry));
                                                                                                           document.getElementById("line-country").textContent = selectedCountry + "."});
-                                                                        document.querySelector("#btn").style.display = "block";
+                                                                        document.getElementById("btn").style.display = "block";
                                                                     });
 })});

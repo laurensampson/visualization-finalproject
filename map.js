@@ -14,6 +14,10 @@ function map(factor, domMax){
                   {"name": "domMax",
                    "value": "max"}],
         "vconcat": [{
+          "title": {
+            "text": "Selected Year: ",
+            "subtitle": {"expr": "year"}
+          },
           "width": 800,
           "height": 400,
           "transform": [{
@@ -41,6 +45,7 @@ function map(factor, domMax){
           {
             "width": 800,
             "height": 100,
+            "title": `Top 10 Countries with Most Deaths from ${factor}`,
             "transform": [
               {"filter": "datum.Year==year"},
               {"filter": "datum.id!=0"},
