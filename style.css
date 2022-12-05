@@ -122,6 +122,7 @@ circle {
 #btn {
     display: none;
     margin: 0 auto;
+    margin-bottom: 30px;
     background-color: #000;
     border-radius: 10px;
     border-radius: 10px; 
